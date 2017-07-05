@@ -8,7 +8,7 @@ class FavoriteCar extends Component {
       //todo remove
       debugger;
         return (<div>
-          this is the fav car comp review: {this.props.favorite.review}
+         {this.props.favorite.review}
             </div>
         );
     }
