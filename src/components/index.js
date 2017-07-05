@@ -12,4 +12,5 @@ export MiniInfoBar from './MiniInfoBar/MiniInfoBar';
 export SurveyForm from './SurveyForm/SurveyForm';
 export WidgetForm from './WidgetForm/WidgetForm';
 export FavoriteCar from './Favorite/FavoriteCar';
+export SearchComponent from './SearchComponent/SearchComponent';
 

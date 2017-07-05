@@ -10,6 +10,8 @@ import {reducer as form} from 'redux-form';
 import info from './info';
 import widgets from './widgets';
 import favorite from './favoritecar';
+import makes from './makes';
+
 
 export default combineReducers({
   routing: routerReducer,
@@ -24,5 +26,6 @@ export default combineReducers({
   info,
   pagination,
   widgets,
-  favorite
+  favorite,
+  makes
 });
