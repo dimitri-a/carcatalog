@@ -13,4 +13,5 @@ export SurveyForm from './SurveyForm/SurveyForm';
 export WidgetForm from './WidgetForm/WidgetForm';
 export FavoriteCar from './Favorite/FavoriteCar';
 export SearchComponent from './SearchComponent/SearchComponent';
+export DetailsComponent from './DetailsComponent/DetailsComponent';
 

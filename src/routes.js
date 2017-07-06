@@ -12,7 +12,8 @@ import {
     Survey,
     NotFound,
     Pagination,
-  Search
+  Search,
+  Details
   } from 'containers';
 
 export default (store) => {
@@ -49,6 +50,7 @@ export default (store) => {
 
       { /* Routes */ }
       <Route path="search" component={Search}/>
+      <Route path="make/model/:id" component={Details}/>
 
 
       { /* Catch all route */ }
