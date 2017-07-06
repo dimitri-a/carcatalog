@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router';
 
 class SearchComponent extends Component {
 
@@ -56,7 +57,7 @@ class SearchComponent extends Component {
       )
     )
 
-    filtered.push(<option value="0">Select a value ese, mamacita</option>)
+    filtered.push(<option value="0">Select a value please</option>)
     return filtered;
 
   }
@@ -70,30 +71,33 @@ class SearchComponent extends Component {
   }
 
   render() {
-    //todo remove
-    debugger;
-    console.log('this.props.makes=', this.props.makes);
-
-
+    const myPath = 'make/model/' + this.state.modelvalue;
 
     return (<div>
-        make value: {this.state.makevalue}
-        model value: {this.state.modelvalue}
         <div className="row">
           <div className="col-md-2"><label htmlFor="makes">Makes:</label></div>
           <div className="col-md-10">
             <select name="" id="" value={this.state.makevalue} onChange={this.handleChange}>
               {this.MakeOptions()}
             </select>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-2"><label htmlFor="makes">Models:</label></div>
+          <div className="col-md-10">
             <select name="" id="" value={this.state.modelvalue} onChange={this.handleChangeModel}>
               {this.ModelOptions(this.state.makevalue)}
             </select>
           </div>
-
         </div>
-
+        <div className="row">
+          <div className="col-md-4">
+            { this.state.modelvalue == 0
+              ? <button className='btn btn-danger'>Details</button>
+              : <Link to={myPath} className='btn btn-success'>Details</Link>}
+          </div>
+        </div>
       </div>
-
     );
   }
 
