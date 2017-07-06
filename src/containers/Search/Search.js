@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SearchComponent from 'components';
+import { SearchComponent } from 'components';
 
 export default class Search extends Component {
 
@@ -7,6 +7,8 @@ export default class Search extends Component {
 
         return (<div>
           search container
+
+            <SearchComponent/>
 
 
             </div>

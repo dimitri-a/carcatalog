@@ -7,8 +7,6 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
 
       default:
-        //todo remove
-        debugger;
             return state;
     }
 }
