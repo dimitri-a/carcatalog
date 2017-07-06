@@ -11,6 +11,8 @@ import info from './info';
 import widgets from './widgets';
 import favorite from './favoritecar';
 import makes from './makes';
+import models from './models';
+
 
 
 export default combineReducers({
@@ -27,5 +29,6 @@ export default combineReducers({
   pagination,
   widgets,
   favorite,
-  makes
+  makes,
+  models
 });

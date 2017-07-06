@@ -6,7 +6,7 @@ class SearchComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {makevalue: 0};
+    this.state = {makevalue: 0,modelvalue:0};
 
   }
 
@@ -20,6 +20,24 @@ class SearchComponent extends Component {
     return makeOptions;
   }
 
+  ModelOptions() {
+    const modelOptions = this.props.models.map
+    (
+      (md) => (
+        <option value={md.id}>{md.name}</option>
+      )
+    );
+    return modelOptions;
+  }
+
+  handleChange(event) {
+    this.setState({makevalue: event.target.value});
+  }
+
+  handleChangeModel(event) {
+    this.setState({modelvalue: event.target.value});
+  }
+
   render() {
     //todo remove
     debugger;
@@ -31,6 +49,9 @@ class SearchComponent extends Component {
           <div className="col-md-10">
             <select name="" id="" value={this.state.makevalue} onChange={this.handleChange}>
               {this.MakeOptions()}
+            </select>
+            <select name="" id="" value={this.state.modelvalue} onChange={this.handleChangeModel}>
+              {this.ModelOptions()}
             </select>
           </div>
 
@@ -47,7 +68,8 @@ const mapStateToProps = function (store) {
   //todo remove
   debugger;
   return {
-    makes: store.makes
+    makes: store.makes,
+    models: store.models
 
   }
 }
