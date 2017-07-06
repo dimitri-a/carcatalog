@@ -1,31 +1,20 @@
-
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 export class DetailsComponent extends Component {
-
-
   render() {
-    //todo remove
-    debugger;
-    //
-    let test = this.props.models;
+    let models = this.props.models;
 
-    let test2 = this.props.id;
-    //todo remove
-    debugger;
+    let result = models.filter((x) => x.id == this.props.id);
 
-    let result = test.filter((x) => x.id == this.props.id);
-
-    // //todo remove
-    debugger;
     return (<div>
-        is this showing?????
-        id: {result[0].id}
-        name: {result[0].name}
-        price: {result[0].price}
-        <img src={result[0].imageUrl} alt=""/>
-
+        <div className="row">
+          <div className="col-md-3">{result[0].name}</div>
+          <div className="col-md-3">{result[0].price}</div>
+          <div className="col-md-6">
+            <img className="img-responsive" src={result[0].imageUrl} alt=""/>
+          </div>
+        </div>
       </div>
     );
   }
