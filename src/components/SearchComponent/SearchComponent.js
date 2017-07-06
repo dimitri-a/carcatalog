@@ -6,11 +6,26 @@ class SearchComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {makevalue: 0,modelvalue:0};
+    this.state = {
+      makevalue: 0,
+      modelvalue: '0'
+    };
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeModel = this.handleChangeModel.bind(this);
+  }
+
+
+  handleChange(event) {
+    this.setState({makevalue: event.target.value});
+  }
+
+  handleChangeModel(event) {
+    this.setState({modelvalue: event.target.value});
   }
 
   MakeOptions() {
+
     const makeOptions = this.props.makes.map
     (
       (mk) => (
@@ -20,14 +35,30 @@ class SearchComponent extends Component {
     return makeOptions;
   }
 
-  ModelOptions() {
-    const modelOptions = this.props.models.map
+
+  FilteredModels(val) {
+
+    const res = this.props.models.filter(model => model.makeId === Number(val));
+
+    return res;
+  }
+
+
+  ModelOptions(makevalue) {
+
+    //todo remove
+    debugger;
+    console.log('modeloptions');
+    const filtered = this.FilteredModels(makevalue).map
     (
-      (md) => (
-        <option value={md.id}>{md.name}</option>
+      (model) => (
+        <option value={model.id}>{model.name}</option>
       )
-    );
-    return modelOptions;
+    )
+
+    filtered.push(<option value="0">Select a value ese, mamacita</option>)
+    return filtered;
+
   }
 
   handleChange(event) {
@@ -43,7 +74,11 @@ class SearchComponent extends Component {
     debugger;
     console.log('this.props.makes=', this.props.makes);
 
+
+
     return (<div>
+        make value: {this.state.makevalue}
+        model value: {this.state.modelvalue}
         <div className="row">
           <div className="col-md-2"><label htmlFor="makes">Makes:</label></div>
           <div className="col-md-10">
@@ -51,7 +86,7 @@ class SearchComponent extends Component {
               {this.MakeOptions()}
             </select>
             <select name="" id="" value={this.state.modelvalue} onChange={this.handleChangeModel}>
-              {this.ModelOptions()}
+              {this.ModelOptions(this.state.makevalue)}
             </select>
           </div>
 
