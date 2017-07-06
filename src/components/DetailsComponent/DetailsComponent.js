@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 export class DetailsComponent extends Component {
   render() {
     let models = this.props.models;
-
     let result = models.filter((x) => x.id == this.props.id);
 
     return (<div>
@@ -19,7 +18,6 @@ export class DetailsComponent extends Component {
     );
   }
 }
-
 
 const mapStateToProps = (store) => {
   return {

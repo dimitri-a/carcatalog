@@ -79,16 +79,6 @@ export default class App extends Component {
               <LinkContainer to="/search">
                 <NavItem eventKey={4}>Search</NavItem>
               </LinkContainer>
-              <LinkContainer to="/details">
-                <NavItem eventKey={5}>Details</NavItem>
-              </LinkContainer>
-            </Nav>
-            {user &&
-            <p className={styles.loggedInMessage + ' navbar-text'}>Logged in as <strong>{user.name}</strong>.</p>}
-            <Nav navbar pullRight>
-              <NavItem eventKey={1} target="_blank" title="View on Github" href="https://github.com/erikras/react-redux-universal-hot-example">
-                <i className="fa fa-github"/>
-              </NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

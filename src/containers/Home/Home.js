@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { FavoriteCar } from 'components';
+import React, {Component} from 'react';
+import {FavoriteCar} from 'components';
 
 export default class Home extends Component {
   render() {
@@ -7,11 +7,9 @@ export default class Home extends Component {
     // require the logo image both from client and server
     const logoImage = require('./logo.png');
     return (
-  <div>
-
-    <FavoriteCar/>
-
-  </div>
+      <div>
+        <FavoriteCar/>
+      </div>
     );
   }
 }

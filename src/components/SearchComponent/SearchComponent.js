@@ -26,7 +26,6 @@ class SearchComponent extends Component {
   }
 
   MakeOptions() {
-
     const makeOptions = this.props.makes.map
     (
       (mk) => (
@@ -38,18 +37,12 @@ class SearchComponent extends Component {
 
 
   FilteredModels(val) {
-
     const res = this.props.models.filter(model => model.makeId === Number(val));
-
     return res;
   }
 
 
   ModelOptions(makevalue) {
-
-    //todo remove
-    debugger;
-    console.log('modeloptions');
     const filtered = this.FilteredModels(makevalue).map
     (
       (model) => (
@@ -59,7 +52,6 @@ class SearchComponent extends Component {
 
     filtered.push(<option value="0">Select a value please</option>)
     return filtered;
-
   }
 
   handleChange(event) {
@@ -104,12 +96,9 @@ class SearchComponent extends Component {
 }
 
 const mapStateToProps = function (store) {
-  //todo remove
-  debugger;
   return {
     makes: store.makes,
     models: store.models
-
   }
 }
 
