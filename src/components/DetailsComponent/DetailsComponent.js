@@ -1,25 +1,41 @@
+
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+export class DetailsComponent extends Component {
 
-class DetailsComponent extends Component {
 
-    render() {
+  render() {
+    //todo remove
+    debugger;
+    //
+    let test = this.props.models;
 
-      console.log('this.props.id=',this.props.id);
+    let test2 = this.props.id;
+    //todo remove
+    debugger;
 
-        return (<div>
-details comp {this.props.id}
-            </div>
-        );
-    }
+    let result = test.filter((x) => x.id == this.props.id);
 
+    // //todo remove
+    debugger;
+    return (<div>
+        is this showing?????
+        id: {result[0].id}
+        name: {result[0].name}
+        price: {result[0].price}
+        <img src={result[0].imageUrl} alt=""/>
+
+      </div>
+    );
+  }
 }
 
 
 const mapStateToProps = (store) => {
   return {
-    models: store.models
+    models: store.models,
+    makes: store.makes
   }
 }
 
